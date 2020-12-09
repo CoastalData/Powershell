@@ -111,6 +111,6 @@ if ($list) {
         Write-Host -ForegroundColor Green "All Tasks Done!"
 }
 else {
-        Write-Host -ForegroundColor Yellow "Session Cancelled"	
+        Write-Host -ForegroundColor Yellow "Output CSV file could not be written"	
         Exit
 }
