@@ -39,12 +39,15 @@ Write-Host -ForegroundColor yellow "############################################
 ""
 #########################
 #>
+# Scheduled Fix for Chrome for Brodie TV Mini PCs
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Set-ExecutionPolicy Bypass -Scope Process -Force
 
 "-------------------"
 Write-Host -ForegroundColor Green "SECTION 1: Getting the list of users"
 "-------------------"
 # Path to Data file containing list of users:
-$listPath = New-TemporaryFile # "C:\users\$env:USERNAME\Documents\users.csv" #################
+$listPath = [System.IO.Path]::GetTempFileName() # New-TemporaryFile # "C:\users\$env:USERNAME\Documents\users.csv" #################
 # Write Information to the screen
 Write-Host -ForegroundColor yellow "Exporting the list of users to $listPath"
 # List the users in c:\users and export to the local profile for calling later
